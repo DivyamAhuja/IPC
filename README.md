@@ -17,6 +17,7 @@ gcc -g -lpthread -o main src/main.c src/gpu_manager.c src/camera_manager.c
 This Program has very bad process management as process run infinite loop and Main gpu_manager process doesn't provide nice ui or interface for creating/adding and rdeleting/removing camera_manager processes
 
 So watch out for your processes ':(
+<br>
 (Some functions are still untested too ':"(  )
 
 ## Working
