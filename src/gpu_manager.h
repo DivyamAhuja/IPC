@@ -2,11 +2,14 @@
 #define GPU_MANAGER_H
 
 #include "camera_manager.h"
+#include <sys/types.h>
+#include <semaphore.h>
 
 typedef struct
 {
     int numCameras;
     camera_manager cameras[512];
+    sem_t process_lock;
 } gpu_manager;
 
 

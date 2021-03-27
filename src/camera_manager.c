@@ -35,9 +35,9 @@ int read_from_camera(camera_manager* cam) {
         if (size_read == FRAME_SIZE) {
             cam->queueEnd += FRAME_SIZE;
             cam->ready_to_be_encoded = (
-                cam->queueEnd > cam->queueStart && cam->queueEnd - cam->queueStart >= 60*FRAME_SIZE
-             || cam->queueStart > cam->queueEnd && cam->queueStart - cam->queueEnd <= 40*FRAME_SIZE
-            );
+                (cam->queueEnd > cam->queueStart) && (cam->queueEnd - cam->queueStart >= 60ll*FRAME_SIZE)
+             || (cam->queueStart > cam->queueEnd) && (cam->queueStart - cam->queueEnd <= 40ll*FRAME_SIZE)
+            ) > 0;
             return 0;
         }
     }

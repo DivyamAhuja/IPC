@@ -31,9 +31,9 @@ int remove_camera_manager(gpu_manager* gpu, camera_manager* cam) {
             if (temp != cam)
                 continue;
             else {
-                *temp = gpu->cameras[gpu->numCameras - 1];
                 kill(cam->pid, SIGKILL);
                 shmctl(cam->id, IPC_RMID, NULL);
+                *temp = gpu->cameras[gpu->numCameras - 1];
                 gpu->numCameras--;
                 return 0;
             }

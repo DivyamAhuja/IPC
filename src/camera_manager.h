@@ -9,11 +9,11 @@ typedef struct
     int pid;
     char name[20];
     void* mem;
-    unsigned long queueStart;
-    unsigned long queueEnd;
+    unsigned long long queueStart;
+    unsigned long long queueEnd;
     int camera_fd;
     int ready_to_be_encoded;
-    unsigned long frameRead;
+    unsigned long long frameRead;
 } camera_manager;
 
 
